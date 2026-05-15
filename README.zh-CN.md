@@ -1,3 +1,5 @@
+[English](./README.md)
+
 # LLM Wiki
 
 一个由 LLM 代理维护的个人知识库，遵循 [Karpathy's LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md) 中描述的模式。
