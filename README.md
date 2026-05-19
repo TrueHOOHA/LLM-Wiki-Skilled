@@ -123,3 +123,28 @@ This is just a git repo of markdown files. You get version history, branching, a
 The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the bookkeeping. Updating cross-references, keeping summaries current, noting contradictions, maintaining consistency across dozens of pages. Humans abandon wikis because the maintenance burden grows faster than the value. LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass.
 
 The human curates sources, directs the analysis, asks good questions, and thinks about what it all means. The LLM does everything else.
+
+## Log contract validation
+
+Validate `wiki/log.md` formatting and chronology:
+
+```bash
+python3 scripts/validate_log.py
+```
+
+Optional: verify append-only behavior against a baseline branch/ref (useful in CI or pre-commit hooks):
+
+```bash
+python3 scripts/validate_log.py --baseline origin/main
+```
+
+Example output:
+
+```text
+Log contract validation passed (1 entries, non-decreasing dates, required bullets present).
+Append-only check passed against baseline: origin/main
+```
+
+Suggested enforcement strategy:
+- Run `python3 scripts/validate_log.py` in local pre-commit hooks.
+- Run `python3 scripts/validate_log.py --baseline origin/main` in CI on pull requests to ensure workflow-level append-only behavior.
