@@ -50,18 +50,19 @@ Use this skill when the operator asks to health-check the wiki, or periodically 
 
 ## Step-by-Step Process
 
-1. **Scan all pages** in `wiki/` (excluding templates).
-2. **Run each check** above, documenting findings.
-3. **Produce a lint report**.
+1. **Run schema checker first**: `python scripts/lint_schema.py --wiki-root wiki --json-out verification/lint-schema-report.json --strict` to validate frontmatter, headings, source paths, and `## Related` cross-links.
+2. **Scan all pages** in `wiki/` (excluding templates) for semantic lint checks.
+3. **Run each check** above, documenting findings.
+4. **Produce a lint report**.
    - Can be a temporary synthesis page in `wiki/syntheses/` or inline in chat.
    - Group findings by check type.
    - Rate each finding by severity (high/medium/low).
-4. **Discuss fixes with the operator**.
+5. **Discuss fixes with the operator**.
    - Present findings.
    - Suggest specific fixes.
    - Ask for confirmation before applying.
-5. **Apply agreed fixes**.
-6. **Append an entry to `wiki/log.md`**.
+6. **Apply agreed fixes**.
+7. **Append an entry to `wiki/log.md`**.
    - Format: `## [YYYY-MM-DD] lint | Wiki health check`
    - Include: checks run, issues found, fixes applied, open questions.
 
@@ -80,6 +81,7 @@ Use this skill when the operator asks to health-check the wiki, or periodically 
 
 ## Verification Checklist
 
+- [ ] `scripts/lint_schema.py` run with machine-readable JSON output captured.
 - [ ] All pages in `wiki/` scanned.
 - [ ] Six checks completed.
 - [ ] Lint report produced.
