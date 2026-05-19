@@ -41,7 +41,7 @@ Use this skill when the operator asks a question that should be answered using t
    - If yes, create a synthesis page in `wiki/syntheses/`.
    - Filename: `YYYY-MM-DD--question-slug.md`
    - Follow the template in `wiki/templates/synthesis.md`.
-   - Update `wiki/index.md` and `wiki/log.md`.
+   - Run `python3 scripts/rebuild_index.py`, then update `wiki/log.md`.
 
 ## Output Contract
 
@@ -74,4 +74,4 @@ Do not file if:
 - [ ] Relevant pages were read and cited.
 - [ ] Answer is presented with citations.
 - [ ] If filed, synthesis page created in `wiki/syntheses/`.
-- [ ] `wiki/index.md` and `wiki/log.md` updated.
+- [ ] `python3 scripts/rebuild_index.py` run (if pages changed) and `wiki/log.md` updated.

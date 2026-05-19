@@ -61,7 +61,9 @@ Use this skill when the operator asks to health-check the wiki, or periodically 
    - Suggest specific fixes.
    - Ask for confirmation before applying.
 5. **Apply agreed fixes**.
-6. **Append an entry to `wiki/log.md`**.
+6. **Rebuild `wiki/index.md`**.
+   - Run `python3 scripts/rebuild_index.py` so tables and statistics reflect lint-driven edits.
+7. **Append an entry to `wiki/log.md`**.
    - Format: `## [YYYY-MM-DD] lint | Wiki health check`
    - Include: checks run, issues found, fixes applied, open questions.
 
@@ -85,4 +87,5 @@ Use this skill when the operator asks to health-check the wiki, or periodically 
 - [ ] Lint report produced.
 - [ ] Operator consulted on fixes.
 - [ ] Agreed fixes applied.
+- [ ] `python3 scripts/rebuild_index.py` run.
 - [ ] `wiki/log.md` appended.

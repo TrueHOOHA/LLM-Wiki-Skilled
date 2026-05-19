@@ -48,10 +48,9 @@ Use this skill when the operator wants to add a new source to the wiki.
    - Add evidence from the new source to `## Evidence`.
    - Add or update `## Related` links.
 
-6. **Update `wiki/index.md`**.
-   - Add new pages to the appropriate table.
-   - Update `updated` dates and summaries for modified pages.
-   - Update statistics (total pages, total sources, last updated).
+6. **Rebuild `wiki/index.md`**.
+   - Run `python3 scripts/rebuild_index.py` to deterministically regenerate all four index tables.
+   - The script recomputes statistics (total pages, total sources, last updated).
 
 7. **Append an entry to `wiki/log.md`**.
    - Format: `## [YYYY-MM-DD] ingest | Source Title`
@@ -78,5 +77,5 @@ Use this skill when the operator wants to add a new source to the wiki.
 - [ ] Source page created in `wiki/sources/`.
 - [ ] Entity pages updated/created in `wiki/entities/`.
 - [ ] Concept pages updated/created in `wiki/concepts/`.
-- [ ] `wiki/index.md` updated.
+- [ ] `python3 scripts/rebuild_index.py` run and `wiki/index.md` updated.
 - [ ] `wiki/log.md` appended.

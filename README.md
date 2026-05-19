@@ -83,6 +83,23 @@ The three core workflows are documented as skills in `.agents/skills/`:
 - **`.agents/skills/llm-wiki-query/SKILL.md`** — How to answer questions using the wiki
 - **`.agents/skills/llm-wiki-lint/SKILL.md`** — How to health-check the wiki
 
+### Rebuild the Index Deterministically
+
+Use `scripts/rebuild_index.py` to regenerate `wiki/index.md` from page frontmatter.
+
+```bash
+python3 scripts/rebuild_index.py
+```
+
+Optional checks:
+
+```bash
+python3 scripts/rebuild_index.py --check          # fail if index is stale
+python3 scripts/rebuild_index.py --sort-by updated
+```
+
+This script is expected to run before finishing ingest/query/lint operations so index tables and statistics stay authoritative.
+
 ## Tips
 
 ### Obsidian Setup
