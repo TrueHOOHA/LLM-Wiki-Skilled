@@ -1,9 +1,7 @@
----
-name: llm-wiki-lint
-description: Health-check the LLM Wiki for structural and logical issues. Use when the operator asks to lint, check, or audit the wiki, or periodically after ingests. The agent scans all pages for contradictions, stale claims, orphan pages, missing cross-references, broken links, and data gaps, then produces a severity-rated report and applies agreed fixes. Trigger keywords: "lint", "health check", "audit wiki", "check wiki", "fix wiki", "clean up wiki".
----
+# LLM Wiki Lint Skill
 
-# Skill: Lint
+## Purpose
+Run a structural and logical health check of the wiki, then coordinate and apply agreed fixes.
 
 ## When to Use
 
