@@ -74,3 +74,46 @@ Given a wiki with known issues:
 - **Orphans found**: Pages with no inbound links are listed.
 - **Missing pages noted**: Important concepts lacking pages are identified.
 - **Fixes applied**: Agreed fixes are applied and logged.
+
+
+## Schema Checker (CI + Operator Report)
+
+Run the schema checker before/alongside lint workflow checks:
+
+```bash
+python scripts/lint_schema.py --wiki-root wiki --json-out verification/lint-schema-report.json --strict
+```
+
+Expected outputs:
+
+- **Human-readable stdout report** for operator chat, including:
+  - files scanned
+  - issue totals by severity
+  - per-file issue list with issue code and message
+- **Machine-readable JSON report** at `verification/lint-schema-report.json` with shape:
+
+```json
+{
+  "summary": {
+    "files_scanned": 0,
+    "issues_total": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "issues": [
+    {
+      "code": "missing_frontmatter_key",
+      "severity": "high",
+      "file": "wiki/entities/example.md",
+      "message": "Missing required frontmatter key ..."
+    }
+  ]
+}
+```
+
+Exit code behavior:
+
+- `0`: no issues, or issues found without `--strict`.
+- `1`: issues found when `--strict` is set (CI fail).
+- `2`: invalid `--wiki-root` path.
