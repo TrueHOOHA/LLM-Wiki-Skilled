@@ -83,6 +83,23 @@ The three core workflows are documented as skills in `.agents/skills/`:
 - **`.agents/skills/llm-wiki-query/SKILL.md`** — How to answer questions using the wiki
 - **`.agents/skills/llm-wiki-lint/SKILL.md`** — How to health-check the wiki
 
+### Rebuild the Index Deterministically
+
+Use `scripts/rebuild_index.py` to regenerate `wiki/index.md` from page frontmatter.
+
+```bash
+python3 scripts/rebuild_index.py
+```
+
+Optional checks:
+
+```bash
+python3 scripts/rebuild_index.py --check          # fail if index is stale
+python3 scripts/rebuild_index.py --sort-by updated
+```
+
+This script is expected to run before finishing ingest/query/lint operations so index tables and statistics stay authoritative.
+
 ## Tips
 
 ### Obsidian Setup
@@ -124,27 +141,27 @@ The tedious part of maintaining a knowledge base is not the reading or the think
 
 The human curates sources, directs the analysis, asks good questions, and thinks about what it all means. The LLM does everything else.
 
-## Log contract validation
+## Verification Runner
 
-Validate `wiki/log.md` formatting and chronology:
-
-```bash
-python3 scripts/validate_log.py
-```
-
-Optional: verify append-only behavior against a baseline branch/ref (useful in CI or pre-commit hooks):
+Run the minimal fixture-based acceptance checks:
 
 ```bash
-python3 scripts/validate_log.py --baseline origin/main
+python verification/run_checks.py
 ```
 
-Example output:
+Sample passing output:
 
 ```text
-Log contract validation passed (1 entries, non-decreasing dates, required bullets present).
-Append-only check passed against baseline: origin/main
+== ingest acceptance ==
+[PASS] source_page_created: Source page created (ok)
+...
+Summary: 10/10 passed
 ```
 
-Suggested enforcement strategy:
-- Run `python3 scripts/validate_log.py` in local pre-commit hooks.
-- Run `python3 scripts/validate_log.py --baseline origin/main` in CI on pull requests to ensure workflow-level append-only behavior.
+Sample failing output:
+
+```text
+== query acceptance ==
+[FAIL] known_pages_only: Only known pages are cited (expectation not met)
+Summary: 9/10 passed
+```
