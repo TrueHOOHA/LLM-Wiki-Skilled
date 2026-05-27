@@ -56,7 +56,7 @@
 LLM-wiki/
 ├── AGENTS.md          # 模式和约定（"系统提示"）
 ├── README.md          # 本文件
-├── README_CN.md       # 中文说明文件
+├── README.zh-CN.md    # 中文说明文件
 ├── raw/               # 你的不可变源文档
 │   ├── sources/       # 文本来源
 │   └── assets/        # 图片、数据文件
