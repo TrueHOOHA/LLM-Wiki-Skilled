@@ -28,7 +28,7 @@ What remains unproven: real freshness, cached Fetch behavior, failure distributi
 | MCP/CLI/SDK fit | MCP registry/cookbook, OpenClaw skill, Python SDK, TypeScript SDK, and CLI surfaces are recorded. | No official Hermes-specific page found; MCP URL inconsistency needs verification. |
 | Marketing claims | Homepage/customer claims include benchmark, cold-start, anti-bot, and detection metrics. | First-party evidence only in this capture; do not adopt based on those claims. |
 
-## Source Map
+## Citations
 - Primary social lead: [[Divyansh Tiwari X post on TinyFish free Search/Fetch for agents]].
 - Related entity/concept pages: [[TinyFish]], [[Zero-credit Search-Fetch Agent Ingestion]], [[Hermes Agent]], [[OpenClaw]], [[Agent-native CLI]], [[Notebook-grounded Retrieval via MCP]].
 
@@ -41,7 +41,7 @@ What remains unproven: real freshness, cached Fetch behavior, failure distributi
 | TinyFish can be relevant to Tolaria ingestion | Medium | Search/Fetch mechanics align with source discovery/extraction needs, but no local eval was run. |
 | Benchmark/anti-bot/customer metrics should drive adoption | Weak | Captured evidence is first-party/marketing-grade without independent methodology. |
 
-## Practical Implications
+## Implications
 - Knowledge-only adoption: Tolaria should remember TinyFish as a candidate Search/Fetch ingestion layer, not as an approved Hermes integration.
 - If a future eval is approved, test Search and Fetch before any Browser/Agent automation because the free/zero-credit value proposition only applies to Search/Fetch.
 - Any integration plan should record whether content is live or cached, especially when citing fetched pages as current evidence.

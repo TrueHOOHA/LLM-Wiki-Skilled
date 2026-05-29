@@ -15,7 +15,7 @@ Strongest counterargument first: [[Codex-maxxing]] is a practitioner workflow es
 
 Extract the durable Tolaria pattern behind Codex-maxxing: [[Codex]] as a steerable place where long-running work can live. Preserve reusable mechanisms, evidence grades, caveats, and Hermes applicability without creating code, prototypes, cron jobs, skill changes, media, slides, or follow-up tasks.
 
-## Executive Briefing
+## Answer / Analysis
 
 - The reusable pattern is [[Durable Agent Operating Loop]]: persistent workstream + high-context input + queued steering + explicit memory + tool/browser/computer reach + remote unblock + heartbeat recurrence + artifact review + verification oracle.
 - The strongest individual mechanism is not voice, remote control, or Heartbeats alone; it is the combination that shifts work from one prompt/answer into a supervised loop.
@@ -23,7 +23,7 @@ Extract the durable Tolaria pattern behind Codex-maxxing: [[Codex]] as a steerab
 - The main risk is ambient or credentialed action: screen-derived memories, GUI/browser control, Slack/Gmail/calendar connectors, support chats, uploads, refunds, and remote control all expand the blast radius.
 - The practical recommendation is approval-gated evaluation, not adoption. If Overseer wants action later, test one bounded loop with explicit stop conditions, draft-only external messages, audit logs, and success metrics.
 
-## Source Map
+## Citations
 
 | Source | Role | Evidence grade | Notes |
 |---|---|---|---|

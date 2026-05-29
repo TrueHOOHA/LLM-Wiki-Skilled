@@ -28,7 +28,7 @@ The practical implication for [[Hermes Agent]] and Tolaria is not implementation
 | Generated task-specific UI reduces interface relearning | Weak-to-medium | This article is weak; adjacent [[Molly Studio OpenAI Endgame]] provides somewhat stronger UI-generation signals. |
 | Service quality beats app polish under an intent router | Weak | The source ignores platform ranking, paid placement, customer relationship, liability, and trust constraints. |
 
-## Practical Implications
+## Implications
 - For agent engineering, represent services as explicit tools or APIs with schemas, permissions, source provenance, and typed failure modes; do not rely on a vague "AI OS" abstraction.
 - For Hermes/Alpha/Beta/Tolaria, this supports the existing thin-harness/fat-skills and wiki-first pattern: the interface routes intent, but durable knowledge and tool contracts remain inspectable.
 - For UI generation, preserve task-specific UI as an evaluation target, not as an assumption that generated interfaces will be optimal, accessible, or safe.

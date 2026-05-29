@@ -14,7 +14,7 @@ Strongest counterargument first: [[Work with Codex from anywhere]] is primary Op
 ## Question / Purpose
 Assess OpenAI's Codex mobile/remote article and linked docs as knowledge-only input for [[Hermes Agent]], [[Codex]], and Tolaria. Extract source-backed primitives, security/failure modes, evidence limits, and approval-gated proposal options without creating code, hooks, tokens, cron jobs, config changes, skill patches, media, slides, or follow-up Kanban tasks.
 
-## Executive Briefing
+## Answer / Analysis
 - The durable pattern is not "use your phone for coding"; it is host/device separation: mobile sends intent and approvals while trusted hosts retain files, credentials, shells, MCP servers, browser/computer state, local tools, sandboxing, and policy.
 - The secure-relay model matters because it keeps hosts reachable from authorized ChatGPT devices without directly exposing host services to the public internet, but the source does not provide a relay threat model or audit.
 - Mobile approvals are useful only if they reduce decision latency without weakening review; the source's primitives should be evaluated around unblock time, diff/test visibility, wrong approval risk, and notification reliability.

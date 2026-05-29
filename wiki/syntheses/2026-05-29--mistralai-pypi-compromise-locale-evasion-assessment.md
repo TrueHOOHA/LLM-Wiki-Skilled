@@ -26,7 +26,7 @@ The evidence stack should remain layered. LaurieWired's viral claim is weak soci
 | Microsoft Threat Intelligence X post | Reported file path, import-time execution, payload URL/name, Linux second stage, credential stealing, locale/geofence behavior, and IR mitigations. | Full timeline, hashes, attribution, or independently reproducible forensics. | Medium |
 | PyPI JSON check | `mistralai` exists; latest was 2.4.8; 2.4.6 was absent on 2026-05-29. | Proof that 2.4.6 was malicious or why it disappeared. | Low-Medium |
 
-## Source Map
+## Citations
 - Primary Tolaria source: [[LaurieWired X post on mistralai PyPI locale evasion]].
 - Entities: [[mistralai PyPI package]], [[Microsoft Threat Intelligence]].
 - Concepts: [[AI/ML Package Supply-chain Compromise]], [[Malicious Package Import-time Execution]], [[Locale and Geofence Malware Evasion]].

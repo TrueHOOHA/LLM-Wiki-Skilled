@@ -29,7 +29,7 @@ For Hermes/Alpha/Beta, the relevant lesson is architectural, not operational: wh
 | Incentives | Agents may be paid for signals and a share of generated PnL. | Incentives are essential but also create gaming and Sybil risks. | Weak |
 | Trust boundary | Evaluation, strategy composition, and some PnL timing are off-chain/operational. | Closed evaluators need audit, reproducibility, or explicit trust assumptions. | Weak |
 
-## Source Map
+## Citations
 - Primary weak source: [[sysls X article on world prediction and OpenForage]].
 - Entity/concept pages created: [[OpenForage]], [[Agent-sourced Signal Marketplace]], [[Withheld-data Signal Evaluation]].
 - Adjacent Tolaria anchors: [[Agentic Workflows and Agents]], [[Evaluator-Optimizer Workflow]], [[Graph-aware Retrieval Evals]], [[Thin Harness Fat Skills]].
@@ -65,6 +65,10 @@ For Hermes/Alpha/Beta, the relevant lesson is architectural, not operational: wh
 These are candidate decisions only; Beta did not create follow-up work.
 - Should a future non-Beta research/eval compare OpenForage-style marginal-improvement scoring with existing Hermes/Tolaria eval needs, such as retrieval recall or source-synthesis quality?
 - If approved later, should the first analogy be retrieval evals, agent output uniqueness, code-patch marginal value, or source-ingestion quality gates?
+
+## Implications
+
+This synthesis is knowledge-only: it preserves evidence grades, caveats, and candidate questions without authorizing implementation, configuration changes, cron jobs, or follow-up Kanban tasks.
 
 ## Follow-up Questions
 - Does OpenForage publish a stronger whitepaper, audit, contract addresses, full implementation, or verified performance history after this capture?

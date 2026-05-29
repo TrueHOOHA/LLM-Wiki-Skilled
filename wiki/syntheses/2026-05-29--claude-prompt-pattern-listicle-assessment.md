@@ -31,7 +31,7 @@ For Hermes/Alpha/Beta, the safest interpretation is not "install these prompts" 
 | Domain assistant tasks | legal translator, finance analyzer, travel planner, meal plan | Translate messy inputs into sections, constraints, risks, and questions | Weak social | High hallucination/liability risk; require source/doc grounding and human verification. |
 | Interactive tutoring | Feynman tutor; Socratic mode; curriculum builder | One concept/question at a time, checks, teach-back, phased plan | Weak social | Good candidate for learning synthesis, but should cite primary learning sources when available. |
 
-## Source Map
+## Citations
 - Weak social lead: [[Anatoli Kopadze X post on Karpathy LLM skill gap and Claude prompts]].
 - Existing Tolaria anchors: [[Context Engineering]], [[Instruction Priority Control]], [[Evaluator-Optimizer Workflow]], [[Thin Harness Fat Skills]], [[Agent-Computer Interface Design]], [[Dynamic Context Loading]].
 
@@ -67,6 +67,10 @@ These are not follow-up tasks created by Beta; they are candidate decisions for 
 - Should a future non-Beta eval compare multi-source synthesis prompts against current Tolaria source-summary/synthesis quality for citation faithfulness and conflict detection?
 - If prompt patterns are ever adapted into Hermes skills, which family should be tested first: source synthesis, adversarial review, tutoring, writing/editing, or roleplay?
 - What evidence bar should upgrade a viral prompt pattern from archive-only/reference to reusable Hermes skill candidate: primary-source guidance, local A/B eval, repeated user request, or measurable Beta failure mode?
+
+## Implications
+
+This synthesis is knowledge-only: it preserves evidence grades, caveats, and candidate questions without authorizing implementation, configuration changes, cron jobs, or follow-up Kanban tasks.
 
 ## Follow-up Questions
 - Is the alleged Karpathy source available elsewhere, and does it actually support the social post's framing?

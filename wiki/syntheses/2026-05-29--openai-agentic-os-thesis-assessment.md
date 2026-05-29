@@ -28,7 +28,7 @@ For [[Hermes Agent]] and Tolaria, the implication is not to build anything. The 
 | OpenAI will become a universal SSO/social identity layer | Weak | The cited X evidence was inaccessible/broken and the inference is speculative. |
 | Standalone apps will fade into APIs behind an OpenAI OS | Weak-to-medium | Useful pattern, but lacks primary evidence across affected app categories and ignores platform/legal/payment/permission constraints. |
 
-## Practical Implications
+## Implications
 - Preserve [[Agentic OS]], [[Post-app Interfaces]], [[Adaptive UI Generation]], and [[AI-native Identity-context Layer]] as concept vocabulary, not as validated roadmaps.
 - Treat UI generation as the most actionable research theme in the source cluster because it has the strongest cited mechanism evidence.
 - Treat identity/social/SSO claims as low-confidence until primary OpenAI docs, product changes, or reliable reporting exist.

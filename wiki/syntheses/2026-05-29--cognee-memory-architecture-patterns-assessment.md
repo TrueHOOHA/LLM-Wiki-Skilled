@@ -33,7 +33,7 @@ Hermes/Tolaria implication: keep Cognee as a reference architecture and possible
 | Ontology enrichment | Docs describe RDF/XML ontology grounding. | Mechanism-level evidence only; no task-specific benefit shown here. |
 | Vendor evals | Public research/eval page and repo eval artifacts exist. | Small, vendor-authored, LLM-as-judge variance; not a persistent-agent-memory benchmark. |
 
-## Source Map
+## Citations
 - Primary source page: [[Cognee - Open Source Memory Platform for Agents]].
 - Related entity: [[Cognee]].
 - Related concepts: [[Agent Memory Control Plane]], [[Hybrid Graph-vector Agent Memory]], [[Session-to-Graph Memory Bridge]], [[Typed DataPoint Memory Model]], [[Memory Hygiene for AI Agents]], [[MCP Tool Connectors]], [[Compounding AI Knowledge Stack]], [[Graph-aware Retrieval Evals]].
@@ -47,7 +47,7 @@ Hermes/Tolaria implication: keep Cognee as a reference architecture and possible
 | Cognee performance claims should drive adoption | Weak | Benchmarks are vendor-authored, small-scope, and not matched to Hermes/Tolaria tasks. |
 | Cognee should be integrated into Hermes now | Not supported | No local eval, approval, security review, or operational plan exists in this card. |
 
-## Practical Implications
+## Implications
 - Knowledge-only decision: promote Cognee into Tolaria as a source-backed memory architecture case study.
 - Use the vocabulary in future discussions: memory verbs, session bridge, provenance-linked DataPoints, hybrid graph/vector retrieval, MCP memory tools, and feedback-aware improvement.
 - Do not import Cognee, configure MCP, install plugins, run benchmarks, create prototypes, or patch Hermes from this card.

@@ -38,6 +38,7 @@
 | [[Jenni AI]] | Jenni AI is an AI academic-writing and research workspace that appears in [[Matt Gittleson on vibecoded B2C app exit playbook]] as the alleged acquirer/operator of [[CiteSure]]. Alpha's related-link check corroborated Jenni's public company/product context and saw "CiteSure by Jenni AI" on CiteSure's homepage, but did not independently verify the acquisition price or Matt Gittleson's visible team status. | 1 | active | 2026-05-29 |
 | [[Knowunity]] | Knowunity is an education technology company mentioned in Tolaria through Cognee's vendor-hosted case study about connecting German learners. The source is useful as a detailed example of graph-style matching claims, but not as independent proof of learning outcomes. | 1 | active | 2026-05-29 |
 | [[Leopold Aschenbrenner]] | Leopold Aschenbrenner is the person linked in Tolaria to [[Situational Awareness LP]] and its related private-fund entities. In the current evidence, SEC Form D/A filings for Situational Awareness Partners LP identify Aschenbrenner Leopold as an executive officer/director/promoter and general partner-related person, while the Q1 2026 13F filings themselves are filed under the Situational Awareness entities rather than under his personal name. | 1 | active | 2026-05-29 |
+| [[LightRAG]] | LightRAG is a retrieval-augmented generation framework referenced in Tolaria as a comparator in Cognee's vendor-published memory/retrieval evaluation material. The current Tolaria evidence does not independently evaluate LightRAG; it preserves LightRAG mainly to make the Cognee benchmark comparison and contradiction traceable through [[Cognee AI Memory Platform, Evals, and Case-study Claims]]. | 1 | active | 2026-05-29 |
 | [[llama.cpp]] | llama.cpp is the open-source C/C++ local LLM inference runtime used by pi-llamacpp to run Qwen3.6 GGUF models through `llama-server`. | 1 | active | 2026-05-29 |
 | [[Local Client Prospector]] | Local Client Prospector is a public [[Codex]] skill repository by Kappaemme for assisted local-business prospecting. In Tolaria it is evidence for [[NPM-packaged Codex Skills]] and guarded browser-assisted research workflows, not evidence that the resulting leads are high-quality or that the workflow should be installed locally. | 1 | active | 2026-05-29 |
 | [[Marketing Skills]] | Marketing Skills is Corey Haines's public `coreyhaines31/marketingskills` repository of Agent Skills-style marketing workflows for AI agents, covering CRO, copywriting, SEO, analytics, growth engineering, email, paid acquisition, launch, pricing, retention, and related domains. | 2 | active | 2026-05-29 |
@@ -300,6 +301,6 @@
 
 ## Statistics
 
-- **Total pages**: 276
+- **Total pages**: 277
 - **Total sources**: 56
 - **Last updated**: 2026-05-29

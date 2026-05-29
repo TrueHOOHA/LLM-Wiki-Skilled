@@ -49,7 +49,7 @@ This connects cleanly to the prior hacker-mindset cluster. [[How to walk through
 - [[On Seeing Through and Unseeing: The Hacker Mindset]] and [[Abstraction-leak Reasoning]]: conceptual support for surface/substrate analysis.
 - [[Public Proof-of-work]], [[Making Usefulness Legible]], and [[Learning in Public as Credential]]: new concept pages preserving the actionable submechanisms.
 
-## Practical Implications
+## Implications
 - Treat formal applications and side-door work as complementary, not mutually exclusive.
 - Favor specificity over volume: study the target, identify a plausible problem, and make a small, inspectable unit of signal.
 - Public artifacts are strongest when they are useful to a knowledgeable audience, not merely polished for generic attention.

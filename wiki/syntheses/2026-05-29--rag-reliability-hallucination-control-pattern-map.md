@@ -37,7 +37,7 @@ The durable Tolaria rewrite is: optimize for grounded-answer reliability with ca
 - Weak-to-medium for adjacent roadmap agreement: [[Akshay Pachaar X post on AI engineer learning topics]] independently names caching, evals, fallback chains, guardrails, and observability, but it is also a weak social list and cannot validate the pipeline.
 - Medium for workflow caution: [[Evaluator-Optimizer Workflow]] supports using clear evaluation criteria and stopping conditions rather than unbounded self-critique.
 
-## Practical Implications
+## Implications
 - Do not store `zero hallucination` as an achievable product guarantee; store it as an evaluation/abstention target.
 - For Tolaria/NotebookLM-style systems, the closest actionable reliability surface is not a new implementation: it is better citation discipline, source grading, stale-source flags, and checks that index/log/citations remain navigable.
 - For any future approved RAG or memory eval, prioritize a small adversarial task set with ground-truth source chunks, expected abstentions, stale-source traps, and citation-support checks before measuring model/provider choice.

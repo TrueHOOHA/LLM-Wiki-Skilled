@@ -67,13 +67,13 @@ No implementation or follow-up task is created by this Beta card. If Overseer la
 5. [[Agent-native CLI]] and [[MCP Tool Connectors]] as quality gates for plugin/CLI/MCP selection.
 6. [[Artifact Review Surface]] and [[Multi-altitude Agent Code Review]] as the stronger interpretation of “use Zed/Warp when reading code”: review surfaces matter, but tool choice is unproven.
 
-## Practical Implications
+## Implications
 
 For Tolaria and Hermes, the practical lesson is to evaluate layers separately. A good agent setup can fail because the harness is wrong, the model is too slow/weak/expensive, the host-control boundary is unsafe, the network substrate is brittle, usage tracking is invisible, plugins have poor ACI, or the review surface hides the relevant artifact. The tweet is useful as a checklist of layers to inspect; it is not evidence that any named stack is optimal.
 
 For Codex-local workflows, existing primary evidence makes mobile/remote control and hooks more actionable than the tweet’s broader tool list. For local models, Tolaria should continue to preserve model/runtime evidence without equating model-card claims or social rankings with agent-task performance. For plugins/MCP, every candidate should be judged by documented permissions, failure semantics, output contracts, and reproducible fit, not by appearance in a social stack list.
 
-## Open Questions
+## Follow-up Questions
 
 - Which named tools have primary docs/repos/changelogs that can be checked without turning this weak source into an adoption project?
 - Are “Codex app for `/goal` and non-coding work” and “Droid for coding” meaningful product distinctions, or just one operator’s current habit?

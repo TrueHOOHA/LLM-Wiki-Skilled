@@ -33,7 +33,7 @@ The most practical design variable is timing. The study's session-4 contrast sug
 - Low-to-medium: extrapolation from essay writing to coding agents, Alpha/Beta ingestion, or professional knowledge work.
 - Weak/unknown: whether different LLMs, multimodal tools, agentic coding systems, or scaffolded learning modes would reproduce the same result.
 
-## Practical Implications
+## Implications
 - For [[Hermes Agent]] and Alpha/Beta: source ingestion should preserve a human/source-grounded claim trail before polished synthesis. A smooth summary alone is not enough if the operator needs recall and ownership.
 - For [[Codex]]/coding workflows: pair output-quality tests with human-comprehension checks when the task goal includes learning an unfamiliar library or codebase.
 - For Tolaria: index this as a learning/evaluation source for assistance timing, cognitive offloading, ownership, and recall; do not convert it into a default policy change.

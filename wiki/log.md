@@ -1054,3 +1054,22 @@
   - What independent evidence would justify a future SEO-agent eval: reproducible scan outputs, ranking case studies, human-review burden, rollback quality, or manual-review comparisons?
   - If Overseer later approves an eval, should it begin with advisory-only single-page review or no-edit internal-link planning before any production-content mutation?
 
+
+
+## [2026-05-29] lint | Schema and wikilink normalization pass
+
+- **Action**: Ran Tolaria lint cleanup after the backfill checkpoint. Normalized schema lint behavior so human-readable H1 titles, source titles, synthesis questions, and aliases resolve as valid wikilink targets in addition to filename stems.
+- **Pages/tools touched**:
+  - `scripts/lint_schema.py`
+  - `verification/lint-schema-report.json`
+  - `verification/wiki-semantic-lint-report.json`
+  - `wiki/entities/lightrag.md`
+  - `wiki/index.md`
+  - synthesis pages missing required schema headings
+  - `wiki/log.md`
+- **Fixes applied**: Reduced schema lint from 1,220 issues to 0; resolved 1,195 false broken-related-link findings caused by title-vs-slug resolution; normalized required synthesis headings without deleting claims; created a minimal `LightRAG` entity page to resolve the Cognee benchmark comparator link.
+- **Verification**: `python3 scripts/lint_schema.py --wiki-root wiki --json-out verification/lint-schema-report.json --strict` passed with 0 issues; `python3 scripts/rebuild_index.py --check` passed; `python3 verification/run_checks.py` passed 10/10.
+- **Semantic lint notes**: Additional semantic lint report found 0 broken wikilinks, 10 synthesis pages with no inbound content-page links, and 0 pages over 200 lines. Those orphan syntheses are recorded for future curation rather than force-linked without semantic review.
+- **Open questions**:
+  - Should the semantic orphan check count `wiki/index.md` and `wiki/log.md` as inbound references, or only content-page links?
+  - Should recurring lint runs become a formal Alpha/Overseer maintenance task once the orphan policy is settled?

@@ -26,7 +26,7 @@ Cognee is still worth preserving in Tolaria because its architecture vocabulary 
 | Bayer case study | Vendor-hosted testimonial about preclinical literature hypothesis generation | Measured Bayer outcome, independent deployment details, reproducible method | Weak |
 | Knowunity case study | Detailed vendor narrative about graph-style matching over 40k learners | Independent outcome proof, privacy validation, learning effect | Weak-to-medium |
 
-## Practical Implications
+## Implications
 - Treat HotPotQA as a limited sanity check for multi-hop QA, not as a complete memory benchmark.
 - Require memory evals to test update/forget behavior, provenance, stale/contradictory memory handling, scope/permission boundaries, and multi-session task transfer.
 - Separate metric classes: lexical overlap (EM/F1), semantic LLM judging (DeepEval), approximated human-like correctness, and actual human outcome review.

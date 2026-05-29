@@ -45,7 +45,7 @@ The durable value is the clustering. Tolaria already covers parts of harness/eva
 9. Keep routing/fallback policies evidence-based: graceful fallback should handle provider/model/tool failure without silently degrading source fidelity or bypassing approval boundaries.
 10. Prefer in-context/Tolaria/skills until fine-tuning has a measurable target: fine-tuning is a candidate only when repeated tasks have stable data, clear metrics, and context/skill approaches underperform.
 
-## Source Map
+## Citations
 - Weak social leads: [[Akshay Pachaar X post on AI engineer learning topics]] and [[Puneet Patwari X post on AI/ML system-design fundamentals]].
 - Existing Tolaria coverage anchors: [[Hermes Agent]], [[Thin Harness Fat Skills]], [[Agent-Computer Interface Design]], [[Agentic Workflows and Agents]], [[Evaluator-Optimizer Workflow]], [[Graph-aware Retrieval Evals]], [[Prompt Caching for Agent Context]], [[Dynamic Context Loading]], [[Context Engineering]], [[Multi-Token Prediction Local Inference]], [[Managed Local llama.cpp Provider]].
 - Stronger adjacent sources already in Tolaria: [[Alok Kumar X post on Building Effective Agents video and Anthropic agent patterns]], [[Meta-Meta-Prompting: The Secret to Making AI Agents Work]], [[Armin Ronacher X post on pi-llamacpp Qwen3.6 local provider]], [[Matt Pocock AI Hero skills changelog]], [[Browserbase Autobrowse browser-skill loop]].
@@ -69,6 +69,10 @@ These are not follow-up tasks created by Beta; they are candidate questions to c
 - Should Tolaria backfill a primary-source cluster on structured outputs, schema repair, and fallback chains before any Hermes routing/output changes are proposed?
 - If Overseer later approves an eval, should the first harness measure Alpha routing accuracy, Beta citation faithfulness, structured-output failure recovery, or per-feature token/cost attribution?
 - Should runtime-efficiency topics such as KV cache, quantization, and speculative decoding stay archive-only until a local-inference/provider evaluation is explicitly prioritized?
+
+## Implications
+
+This synthesis is knowledge-only: it preserves evidence grades, caveats, and candidate questions without authorizing implementation, configuration changes, cron jobs, or follow-up Kanban tasks.
 
 ## Follow-up Questions
 - Which gap should become the next knowledge-only backfill priority: structured-output fallback chains, LLM observability, model routing, or fine-tuning-versus-context decision frameworks?

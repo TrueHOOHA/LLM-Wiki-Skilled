@@ -12,7 +12,7 @@ source_count: 1
 ## Question / Purpose
 Assess [[Effective Harnesses for Long-running Agents]] as primary evidence for long-running agent harness design, dedupe it against existing Tolaria harness/operating-loop notes, and preserve Hermes-relevant implications without creating prototypes, scripts, config changes, skill patches, cron jobs, or follow-up tasks.
 
-## Executive Briefing
+## Answer / Analysis
 - Strongest counterargument first: the source is first-party Anthropic practitioner evidence, not an independent benchmark. It strongly documents Anthropic's recommended pattern and quickstart mechanics, but it does not prove production success across models, domains, or Hermes/Codex workflows.
 - The durable finding is that compaction is not a complete continuity mechanism. Long-running agents need externalized state that later sessions can inspect: feature/test JSON, progress log, restart script, git history, and verification results.
 - The initializer/coding-agent split is useful because it separates bootstrapping from incremental delivery. First session creates the map and tools; later sessions choose one incomplete feature and leave clean state.
@@ -43,7 +43,7 @@ Assess [[Effective Harnesses for Long-running Agents]] as primary evidence for l
 - [[Agent-Computer Interface Design]] already covers mistake-resistant tools. This source adds ACI examples around `init.sh`, Puppeteer MCP/browser testing, quickstart hooks, and explicit session-start rediscovery steps.
 - [[Thin Harness Fat Skills]] remains adjacent but distinct. Anthropic's pattern is not only "put behavior in skills"; it is "make the project state and verification surfaces durable enough that a new session can resume safely."
 
-## Practical Implications
+## Implications
 For [[Hermes Agent]], the useful lesson is continuity through explicit artifacts, not uncontrolled autonomy. Hermes already has Kanban task identity, worker comments, Tolaria raw/source/concept/synthesis pages, index/log bookkeeping, and verification scripts. The Anthropic article supports treating those surfaces as harness components that prevent premature victory, duplicated work, and state loss.
 
 For [[Codex]] and [[Claude Code]] workflow thinking, the source strengthens the case for small sequential tasks with preflight rediscovery and post-change verification. It does not decide whether Codex, Claude Code, or another model is better; it says the surrounding harness can make or break long-running reliability.

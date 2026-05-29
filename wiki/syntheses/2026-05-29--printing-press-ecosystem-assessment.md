@@ -42,7 +42,7 @@ For Hermes/Tolaria, the safest near-term value is knowledge-only: index and asse
 - MCP surface parity is checked against CLI behavior, especially auth, dry-run, and destructive-action safeguards.
 - Agent-readiness review checks typed exit codes, deterministic errors, examples, and short context footprints.
 
-## Source Map
+## Citations
 - Primary source: [[Printing Press — agent-native CLIs from a single prompt]] from the homepage and Alpha's linked-source repo inspection.
 - Supporting entities/concepts: [[Printing Press]], [[Agent-native CLI]], [[Catalog-backed Agent Tool Distribution]], [[Hermes Agent]].
 - Evidence note: linked repos support architecture/catalog mechanics; product-quality claims remain unbenchmarked in this card.
