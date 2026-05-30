@@ -1,3 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
 # Runtime locks
 *.lock
 *.pid
@@ -5,7 +15,14 @@
 # Local one-off command outputs
 backlog/*last-output*.txt
 
+# Generated reports
+verification/lint-schema-report.json
+
 # Editor / OS noise
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.swp
+*.swo
 *~

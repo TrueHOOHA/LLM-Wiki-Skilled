@@ -25,7 +25,7 @@ Integrate a newly provided raw source into the wiki while preserving raw-source 
 3. **Write source summary page** in `wiki/sources/` using filename `YYYY-MM-DD--source-title-slug.md`.
 4. **Update/create entity pages** in `wiki/entities/` for concrete things mentioned.
 5. **Update/create concept pages** in `wiki/concepts/` for abstract ideas mentioned.
-6. **Update `wiki/index.md`** to reflect all new/updated pages.
+6. **Rebuild `wiki/index.md`** by running `python scripts/rebuild_index.py` from the project root.
 7. **Append to `wiki/log.md`** with an ingest entry.
 
 ## Path Handling Rules
@@ -38,5 +38,5 @@ Integrate a newly provided raw source into the wiki while preserving raw-source 
 ## Done Criteria
 - Source page exists in `wiki/sources/` and is complete.
 - All entities/concepts mentioned in the source have corresponding created/updated pages.
-- `wiki/index.md` reflects these changes.
+- `wiki/index.md` reflects these changes (run `python scripts/rebuild_index.py` to regenerate deterministically).
 - `wiki/log.md` contains a newly appended ingest entry.

@@ -19,7 +19,7 @@ Answer operator questions using the wiki as the primary source of truth, with re
 2. **Read relevant pages** across entities, concepts, sources, and syntheses.
 3. **Synthesize answer with citations** using wikilinks to pages used.
 4. **Present answer to operator.**
-5. **If reusable/new synthesis:** file it in `wiki/syntheses/`, then update `wiki/index.md` and append to `wiki/log.md`.
+5. **If reusable/new synthesis:** file it in `wiki/syntheses/`, then rebuild index with `python scripts/rebuild_index.py` and append to `wiki/log.md`.
 
 ## Operator Interaction Prompts
 - Before filing (minimal):
@@ -34,4 +34,4 @@ Answer operator questions using the wiki as the primary source of truth, with re
 
 ## Done Criteria
 - Delivered answer is supported by cited wiki pages.
-- If filed: synthesis page exists, is linked in `wiki/index.md`, and is logged in appended `wiki/log.md` entry.
+- If filed: synthesis page exists, is linked in `wiki/index.md` (run `python scripts/rebuild_index.py` to regenerate deterministically), and is logged in appended `wiki/log.md` entry.
