@@ -8,15 +8,21 @@ build/
 .venv/
 venv/
 
-# OS
+# Runtime locks
+*.lock
+*.pid
+
+# Local one-off command outputs
+backlog/*last-output*.txt
+
+# Generated reports
+verification/lint-schema-report.json
+
+# Editor / OS noise
 .DS_Store
 Thumbs.db
-
-# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# Generated reports
-verification/lint-schema-report.json
+*~
