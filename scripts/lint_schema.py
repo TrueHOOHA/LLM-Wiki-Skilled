@@ -103,42 +103,6 @@ def page_name(md_file: Path) -> str:
     return md_file.stem
 
 
-def heading_title(body: str) -> str | None:
-    for line in body.splitlines():
-        if line.startswith("# "):
-            return line[2:].strip()
-    return None
-
-
-def page_identifiers(md_file: Path) -> set[str]:
-    """Return all wikilink targets that should resolve to this page.
-
-    Obsidian links in this vault commonly use human-readable H1 titles
-    (for example [[Hermes Agent]]) while files are kebab-case slugs
-    (for example wiki/entities/hermes-agent.md). The lint checker should
-    validate the wiki's link contract, not force every page to link by
-    filename stem.
-    """
-    text = md_file.read_text(encoding="utf-8")
-    frontmatter, body = parse_frontmatter(text)
-    identifiers = {page_name(md_file)}
-
-    title = heading_title(body)
-    if title:
-        identifiers.add(title)
-
-    for key in ("title", "question"):
-        value = frontmatter.get(key)
-        if isinstance(value, str) and value.strip():
-            identifiers.add(value.strip())
-
-    aliases = frontmatter.get("aliases")
-    if isinstance(aliases, list):
-        identifiers.update(str(alias).strip() for alias in aliases if str(alias).strip())
-
-    return identifiers
-
-
 def wiki_content_files(root: Path) -> list[Path]:
     allowed = {"entities", "concepts", "sources", "syntheses"}
     files = []
@@ -152,10 +116,7 @@ def wiki_content_files(root: Path) -> list[Path]:
 
 
 def build_page_index(root: Path) -> set[str]:
-    known: set[str] = set()
-    for path in wiki_content_files(root):
-        known.update(page_identifiers(path))
-    return known
+    return {page_name(path) for path in wiki_content_files(root)}
 
 
 def related_section_links(body: str) -> list[str]:
