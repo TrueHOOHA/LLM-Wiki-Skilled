@@ -1,16 +1,12 @@
-# Synthesis Template
-
-Copy this template to create a new synthesis page in `wiki/syntheses/`.
-
-```yaml
 ---
 type: synthesis
+title: <Synthesis Title>
+description: <One-sentence summary of the synthesis>
 question: "The exact question this page answers"
 tags: []
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
-```
 
 # Synthesis Title
 
@@ -28,6 +24,10 @@ Detailed answer or analysis, citing sources with wikilinks.
 |-----------|----------|----------|
 | Criterion 1 | ... | ... |
 | Criterion 2 | ... | ... |
+
+## Related Concepts
+
+- [[Related Entity or Concept]] — Why it matters.
 
 ## Citations
 

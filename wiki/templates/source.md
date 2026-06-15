@@ -1,18 +1,15 @@
-# Source Template
-
-Copy this template to create a new source summary in `wiki/sources/`.
-
-```yaml
 ---
 type: source
+title: <Exact Title of Source>
+description: <One-sentence summary of the source>
 source_path: raw/sources/original-filename.pdf
-title: "Exact Title of Source"
-author: "Author Name"
+author: <Author Name>
 date: YYYY-MM-DD
 tags: []
 created: YYYY-MM-DD
+updated: YYYY-MM-DD
+source_count: 0
 ---
-```
 
 # Source Title
 
@@ -41,3 +38,7 @@ created: YYYY-MM-DD
 ## Follow-ups
 
 - Question or lead generated from this source.
+
+## Citations
+
+- [[Source Page Name]]
