@@ -68,12 +68,11 @@ LLM-wiki/
 │   ├── sources/       # 来源摘要
 │   ├── syntheses/     # 跨来源分析
 │   └── templates/     # 可复用的页面模板
-├── .agents/           # 项目级技能定义
-│   └── skills/
-│       ├── llm-wiki-ingest/   # 摄入工作流技能
-│       ├── llm-wiki-query/    # 查询工作流技能
-│       └── llm-wiki-lint/     # 清理工作流技能
-└── verification/      # TDD 夹具和测试用例
+└── .agents/           # 项目级技能定义
+    └── skills/
+        ├── llm-wiki-ingest/   # 摄入工作流技能
+        ├── llm-wiki-query/    # 查询工作流技能
+        └── llm-wiki-lint/     # 清理工作流技能
 ```
 
 ## 工作流

@@ -67,12 +67,11 @@ LLM-wiki/
 │   ├── sources/       # Source summaries
 │   ├── syntheses/     # Cross-source analysis
 │   └── templates/     # Reusable page templates
-├── .agents/            # Project-level skill definitions
-│   └── skills/
-│       ├── llm-wiki-ingest/   # Ingest workflow skill
-│       ├── llm-wiki-query/    # Query workflow skill
-│       └── llm-wiki-lint/     # Lint workflow skill
-└── verification/      # TDD fixtures and test cases
+└── .agents/            # Project-level skill definitions
+    └── skills/
+        ├── llm-wiki-ingest/   # Ingest workflow skill
+        ├── llm-wiki-query/    # Query workflow skill
+        └── llm-wiki-lint/     # Lint workflow skill
 ```
 
 ## Workflows
@@ -83,22 +82,7 @@ The three core workflows are documented as skills in `.agents/skills/`:
 - **`.agents/skills/llm-wiki-query/SKILL.md`** — How to answer questions using the wiki
 - **`.agents/skills/llm-wiki-lint/SKILL.md`** — How to health-check the wiki
 
-### Rebuild the Index Deterministically
-
-Use `scripts/rebuild_index.py` to regenerate `wiki/index.md` from page frontmatter.
-
-```bash
-python3 scripts/rebuild_index.py
-```
-
-Optional checks:
-
-```bash
-python3 scripts/rebuild_index.py --check          # fail if index is stale
-python3 scripts/rebuild_index.py --sort-by updated
-```
-
-This script is expected to run before finishing ingest/query/lint operations so index tables and statistics stay authoritative.
+The skills enforce the schema defined in `AGENTS.md` and maintain `wiki/index.md` / `wiki/log.md` on every operation — there are no helper scripts to run.
 
 ## Tips
 
@@ -140,28 +124,3 @@ This is just a git repo of markdown files. You get version history, branching, a
 The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the bookkeeping. Updating cross-references, keeping summaries current, noting contradictions, maintaining consistency across dozens of pages. Humans abandon wikis because the maintenance burden grows faster than the value. LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass.
 
 The human curates sources, directs the analysis, asks good questions, and thinks about what it all means. The LLM does everything else.
-
-## Verification Runner
-
-Run the minimal fixture-based acceptance checks:
-
-```bash
-python verification/run_checks.py
-```
-
-Sample passing output:
-
-```text
-== ingest acceptance ==
-[PASS] source_page_created: Source page created (ok)
-...
-Summary: 10/10 passed
-```
-
-Sample failing output:
-
-```text
-== query acceptance ==
-[FAIL] known_pages_only: Only known pages are cited (expectation not met)
-Summary: 9/10 passed
-```
