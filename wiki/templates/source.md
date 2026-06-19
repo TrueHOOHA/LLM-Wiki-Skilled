@@ -1,14 +1,11 @@
 ---
 type: source
-title: <Exact Title of Source>
-description: <One-sentence summary of the source>
 source_path: raw/sources/original-filename.pdf
-author: <Author Name>
+title: "Exact Title of Source"
+author: "Author Name"
 date: YYYY-MM-DD
-tags: []
+tags: [tag-one, tag-two]
 created: YYYY-MM-DD
-updated: YYYY-MM-DD
-source_count: 0
 ---
 
 # Source Title
@@ -38,7 +35,3 @@ source_count: 0
 ## Follow-ups
 
 - Question or lead generated from this source.
-
-## Citations
-
-- [[Source Page Name]]

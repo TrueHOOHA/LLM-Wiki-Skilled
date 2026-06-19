@@ -1,9 +1,7 @@
 ---
 type: synthesis
-title: <Synthesis Title>
-description: <One-sentence summary of the synthesis>
 question: "The exact question this page answers"
-tags: []
+tags: [tag-one, tag-two]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
@@ -20,14 +18,12 @@ Detailed answer or analysis, citing sources with wikilinks.
 
 ## Comparison Table
 
+> Include this section only when comparing options side by side. Omit it otherwise.
+
 | Dimension | Option A | Option B |
 |-----------|----------|----------|
 | Criterion 1 | ... | ... |
 | Criterion 2 | ... | ... |
-
-## Related Concepts
-
-- [[Related Entity or Concept]] — Why it matters.
 
 ## Citations
 
