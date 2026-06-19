@@ -141,9 +141,10 @@ LLM-wiki/
 ## Citation Rules
 
 1. Every claim in a wiki page must cite at least one source page or synthesis page.
-2. Use Obsidian wikilink syntax: `[[Page Name]]` or `[[Page Name|display text]]`.
-3. In source pages, cite the raw source file path in `source_path` frontmatter.
-4. When updating a page based on a new source, append the new citation—do not remove old ones unless they are factually incorrect.
+2. Use Obsidian wikilink syntax: `[[target]]` or `[[target|display text]]`, where `target` is the linked note's name — the file's **basename without extension**. For a page stored as `wiki/entities/my-entity.md`, the note name is `my-entity`, so link to it as `[[my-entity]]` or, for a readable label, `[[my-entity|My Entity]]`.
+3. A wikilink resolves (and passes lint) if `target` matches either the file's basename or one of its frontmatter `aliases`. The `aliases` field exists so pages stay linkable by human-readable names (e.g. `[[My Entity]]`) regardless of their kebab-case filename.
+4. In source pages, cite the raw source file path in `source_path` frontmatter.
+5. When updating a page based on a new source, append the new citation—do not remove old ones unless they are factually incorrect.
 
 ## Ingest Workflow
 

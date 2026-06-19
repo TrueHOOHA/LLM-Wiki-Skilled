@@ -23,7 +23,7 @@ For every page under `wiki/entities/`, `wiki/concepts/`, `wiki/sources/`, and `w
 
 - **Frontmatter:** every key required for the page's `type` is present and correctly typed (`type`, `tags`, `created` always; plus type-specific keys per AGENTS.md).
 - **Sections:** every required `## ` heading for the page's `type` is present and spelled exactly as in AGENTS.md.
-- **Wikilinks:** every `[[link]]` anywhere in the page resolves to a page that exists on disk.
+- **Wikilinks:** every `[[link]]` anywhere in the page resolves to a page on disk — `target` must match a file's basename or one of its frontmatter `aliases` (see `AGENTS.md` § Citation Rules).
 - **Filenames:** entity and concept pages use `kebab-case.md`; source and synthesis pages use `YYYY-MM-DD--slug.md` (per `AGENTS.md` § Page Types & Conventions).
 - **Source pages:** `source_path` frontmatter begins with `raw/sources/` or `raw/assets/`.
 
