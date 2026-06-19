@@ -31,13 +31,14 @@ LLM-wiki/
 │   ├── sources/       # One summary page per ingested source.
 │   ├── syntheses/     # Cross-source analysis, comparisons, answers.
 │   └── templates/     # Reusable page templates.
-├── .agents/            # Project-level skill definitions (OpenCode autodiscovery).
-│   └── skills/
-│       ├── llm-wiki-ingest/   # Ingest workflow skill.
-│       ├── llm-wiki-query/    # Query workflow skill.
-│       └── llm-wiki-lint/     # Lint workflow skill.
-└── verification/      # TDD fixtures and acceptance cases.
+└── .agents/            # Project-level skill definitions (OpenCode autodiscovery).
+    └── skills/
+        ├── llm-wiki-ingest/   # Ingest workflow skill.
+        ├── llm-wiki-query/    # Query workflow skill.
+        └── llm-wiki-lint/     # Lint workflow skill.
 ```
+
+> **Enforcement model.** Workflow rigidity is enforced entirely by the skills under `.agents/skills/` against the schema defined in this file. There are no helper scripts. `AGENTS.md` is the single source of truth for every page type, frontmatter field, section, index format, and log contract. Skills must never re-define the schema inline — they reference and enforce this document.
 
 ## Page Types & Conventions
 
@@ -146,65 +147,15 @@ LLM-wiki/
 
 ## Ingest Workflow
 
-**Goal:** Integrate a new raw source into the wiki.
-
-**Preconditions:**
-- Source file exists in `raw/sources/` or `raw/assets/`.
-- The operator has requested ingestion.
-
-**Steps:**
-1. Read the raw source. If the source references images, read them separately after reading the text.
-2. Discuss key takeaways with the operator. Summarize the main points. Ask what to emphasize, what connections to draw, what to prioritize. This is a conversation, not a report — the operator's judgment shapes what gets extracted and how it's framed.
-3. Write a source summary page in `wiki/sources/`.
-4. Update or create entity pages in `wiki/entities/` for any concrete things mentioned.
-5. Update or create concept pages in `wiki/concepts/` for any abstract ideas mentioned.
-6. Update `wiki/index.md` with new and updated pages.
-7. Append an entry to `wiki/log.md`.
-
-**Done Criteria:**
-- Source page exists and is complete.
-- All entities and concepts mentioned have pages (new or updated).
-- `wiki/index.md` reflects all changes.
-- `wiki/log.md` has a new entry.
+See `.agents/skills/llm-wiki-ingest/SKILL.md`. Procedure is owned by the skill; this document owns only the schema (page types, frontmatter, sections, citation rules, and the index/log update rules below).
 
 ## Query Workflow
 
-**Goal:** Answer a question using the wiki as the primary knowledge source.
-
-**Steps:**
-1. Read `wiki/index.md` to find relevant pages.
-2. Read relevant entity, concept, source, and synthesis pages.
-3. Synthesize an answer with citations (wikilinks to pages used). Answers can take different forms: a markdown page, a comparison table, a slide deck (Marp), a chart (matplotlib), or a canvas. Choose the format that best fits the question.
-4. Present the answer to the operator.
-5. If the answer is reusable or represents new synthesis, file it as a new synthesis page in `wiki/syntheses/` and update `wiki/index.md` and `wiki/log.md`.
-
-**Done Criteria:**
-- Answer is supported by cited wiki pages.
-- If filed, synthesis page exists and is linked from index and log.
+See `.agents/skills/llm-wiki-query/SKILL.md`.
 
 ## Lint Workflow
 
-**Goal:** Health-check the wiki for structural and logical issues.
-
-**Checks:**
-1. **Contradictions:** Claims on different pages that conflict.
-2. **Stale Claims:** Assertions newer sources have superseded.
-3. **Orphan Pages:** Pages with no inbound wikilinks.
-4. **Missing Pages:** Important concepts mentioned but lacking dedicated pages.
-5. **Broken Links:** Wikilinks pointing to non-existent pages.
-6. **Data Gaps:** Areas where additional sources or web search could fill holes.
-
-**Steps:**
-1. Scan all pages for the above issues.
-2. Produce a lint report (can be a temporary synthesis page or inline in chat).
-3. Discuss fixes with the operator.
-4. Apply agreed fixes.
-5. Append an entry to `wiki/log.md`.
-
-**Done Criteria:**
-- Report lists all found issues with severity.
-- Agreed fixes are applied.
-- `wiki/log.md` updated.
+See `.agents/skills/llm-wiki-lint/SKILL.md`.
 
 ## Update Rules for Special Files
 
@@ -214,6 +165,14 @@ LLM-wiki/
 - Modify existing entries when pages are updated (change `updated` date and summary if needed).
 - Group by: Entities, Concepts, Sources, Syntheses.
 - Each entry: `| [[Page Name]] | One-line summary | Source count | Status | Updated |`
+
+**Canonical rebuild procedure** (the only way to regenerate the index; every workflow that touches pages must run this on completion):
+
+1. Read every `.md` file under `wiki/entities/`, `wiki/concepts/`, `wiki/sources/`, and `wiki/syntheses/` (never `wiki/templates/`).
+2. For each page, read its YAML frontmatter: `type`, `tags`, `created`, `updated`, `source_count` (and `title` for source pages).
+3. Derive a one-line summary from the first content paragraph under the page's first `## ` section.
+4. Rewrite `wiki/index.md` wholesale, preserving the fixed structure: H1 `# Wiki Index`, the catalog note, then four tables (Entities, Concepts, Sources, Syntheses) each with the header `| Page | Summary | Sources | Status | Updated |`, followed by a `## Statistics` block listing total pages, total sources, and last-updated date.
+5. The index must list exactly the pages that exist on disk — no missing rows, no phantom rows. `updated` dates come from page frontmatter.
 
 ### `wiki/log.md`
 
