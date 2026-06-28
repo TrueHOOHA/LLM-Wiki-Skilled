@@ -1,22 +1,22 @@
 ---
 type: synthesis
+title: Synthesis Title
+description: One-line summary.
 question: "The exact question this page answers"
 tags: [tag-one, tag-two]
 created: YYYY-MM-DD
-updated: YYYY-MM-DD
+timestamp: YYYY-MM-DD
 ---
 
-# Synthesis Title
-
-## Question / Purpose
+# Question / Purpose
 
 The question or topic this synthesis addresses.
 
-## Answer / Analysis
+# Answer / Analysis
 
-Detailed answer or analysis, citing sources with wikilinks.
+Detailed answer or analysis, citing sources with Obsidian wikilinks.
 
-## Comparison Table
+# Comparison Table
 
 > Include this section only when comparing options side by side. Omit it otherwise.
 
@@ -25,15 +25,15 @@ Detailed answer or analysis, citing sources with wikilinks.
 | Criterion 1 | ... | ... |
 | Criterion 2 | ... | ... |
 
-## Citations
+# Citations
 
-- [[Source Page Name]] — "Brief evidence snippet."
+[1] [[source-title-slug|Source Page Title]] — "Brief evidence snippet."
 
-## Implications
+# Implications
 
 Why this matters.
 
-## Follow-up Questions
+# Follow-up Questions
 
 - What remains unclear?
 - What should be investigated next?

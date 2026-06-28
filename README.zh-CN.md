@@ -2,7 +2,7 @@
 
 # LLM Wiki
 
-一个由 LLM 代理维护的个人知识库，遵循 [Karpathy's LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md) 中描述的模式。
+一个由 LLM 代理维护的个人知识库，遵循 [Karpathy's LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md) 中描述的模式。`wiki/` 目录遵循 [开放知识格式 (OKF)](./SPEC.md) v0.1。
 
 **核心隐喻：** Obsidian 是 IDE，LLM 是程序员，Wiki 是代码库。你可以实时浏览结果——跟随链接、查看图谱视图、阅读更新的页面。LLM 完成所有繁琐的工作：总结、交叉引用、归档和记录。
 
@@ -38,7 +38,7 @@
 代理将会：
 - 在 `wiki/index.md` 中搜索相关页面
 - 从多个页面读取并综合信息
-- 使用维基链接引用来源
+- 使用 Obsidian wikilink 引用来源
 - 如果答案可复用，主动将其归档为新的综合页面
 
 ### 3. 健康检查
@@ -55,6 +55,7 @@
 ```
 LLM-wiki/
 ├── AGENTS.md          # 模式和约定（"系统提示"）
+├── SPEC.md            # 开放知识格式 (OKF) v0.1 规范，Wiki 遵循此规范。
 ├── README.md          # 本文件
 ├── README.zh-CN.md    # 中文说明文件
 ├── raw/               # 你的不可变源文档

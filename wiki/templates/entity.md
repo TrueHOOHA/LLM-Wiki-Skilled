@@ -1,24 +1,24 @@
 ---
 type: entity
+title: Entity Name
+description: One-line summary.
 aliases: ["Alternative Name", "Abbreviation"]
 tags: [tag-one, tag-two]
 created: YYYY-MM-DD
-updated: YYYY-MM-DD
+timestamp: YYYY-MM-DD
 source_count: 0
 ---
 
-# Entity Name
-
-## Identity
+# Identity
 
 What this entity is, in one concise paragraph.
 
-## Aliases
+# Aliases
 
 - Alternative Name
 - Abbreviation
 
-## Key Attributes
+# Key Attributes
 
 | Attribute | Value |
 |-----------|-------|
@@ -26,15 +26,15 @@ What this entity is, in one concise paragraph.
 | Founded | YYYY-MM-DD |
 | ... | ... |
 
-## Evidence
+# Citations
 
-- [[Source Page Name]] — "Brief quote or context about this entity from the source."
+[1] [[source-title-slug|Source Page Title]] — "Brief quote or context about this entity from the source."
 
-## Related
+# Related
 
-- [[Related Entity or Concept]] — How this entity relates to it.
+- [[related-slug|Related Entity or Concept]] — How this entity relates to it.
 
-## Open Questions
+# Open Questions
 
 - What is the relationship between this entity and X?
 - Is the claim about Y still current?

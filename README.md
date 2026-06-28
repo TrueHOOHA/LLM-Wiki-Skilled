@@ -2,7 +2,7 @@
 
 # LLM Wiki
 
-A personal knowledge base maintained by LLM agents, following the pattern described in [Karpathy's LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md).
+A personal knowledge base maintained by LLM agents, following the pattern described in [Karpathy's LLM Wiki](https://gist.githubusercontent.com/karpathy/442a6bf555914893e9891c11519de94f/raw/ac46de1ad27f92b28ac95459c782c07f6b8c964a/llm-wiki.md). The `wiki/` tree conforms to the [Open Knowledge Format (OKF)](./SPEC.md) v0.1.
 
 **The core metaphor:** Obsidian is the IDE. The LLM is the programmer. The wiki is the codebase. You browse the results in real time — following links, checking the graph view, reading updated pages. The LLM does all the grunt work: summarizing, cross-referencing, filing, and bookkeeping.
 
@@ -38,7 +38,7 @@ The agent will:
 The agent will:
 - Search `wiki/index.md` for relevant pages
 - Read and synthesize information from multiple pages
-- Cite sources using wikilinks
+- Cite sources using Obsidian wikilinks
 - Offer to file the answer as a new synthesis page if it's reusable
 
 ### 3. Health Check
@@ -55,6 +55,7 @@ The agent will:
 ```
 LLM-wiki/
 ├── AGENTS.md          # Schema and conventions (the "system prompt")
+├── SPEC.md            # Open Knowledge Format (OKF) v0.1 spec the wiki conforms to.
 ├── README.md          # This file
 ├── raw/               # Your immutable source documents
 │   ├── sources/       # Text sources
