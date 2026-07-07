@@ -1,3 +1,8 @@
+---
+name: llm-wiki-lint
+description: "Run a structural and logical health check of the LLM Wiki OKF bundle against SPEC.md and AGENTS.md. Use whenever the operator asks to lint the wiki, check for schema violations, contradictions, stale claims, orphan pages, broken wikilinks, or health-check the wiki after ingests."
+---
+
 # LLM Wiki Lint Skill
 
 ## Purpose

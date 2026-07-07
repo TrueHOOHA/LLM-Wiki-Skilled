@@ -1,3 +1,8 @@
+---
+name: llm-wiki-query
+description: "Answer operator questions using the LLM Wiki as the primary source of truth, and optionally file reusable syntheses back into the wiki. Use whenever the operator asks a question about wiki content, queries the knowledge base, requests a synthesis across sources, or wants an answer based on what has been ingested."
+---
+
 # LLM Wiki Query Skill
 
 ## Purpose
