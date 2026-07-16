@@ -53,12 +53,15 @@
 ## 项目结构
 
 ```
-LLM-wiki/
+LLM-Wiki/
 ├── AGENTS.md          # 模式和约定（"系统提示"）
 ├── SPEC.md            # 开放知识格式 (OKF) v0.1 规范，Wiki 遵循此规范。
-├── README.md          # 本文件
-├── README.zh-CN.md    # 中文说明文件
+├── README.md          # 英文说明文件
+├── README.zh-CN.md    # 本文件（中文）
+├── LICENSE            # 项目许可证
 ├── raw/               # 你的不可变源文档
+│   ├── README.md      # 原始来源策略与命名（中文）
+│   ├── README.en.md   # 英文原始来源策略
 │   ├── sources/       # 文本来源
 │   └── assets/        # 图片、数据文件
 ├── wiki/              # LLM 维护的知识库

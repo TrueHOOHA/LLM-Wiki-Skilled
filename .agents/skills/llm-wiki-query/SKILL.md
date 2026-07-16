@@ -34,7 +34,7 @@ Answer operator questions using the wiki as the primary source of truth, with re
 
 ## Done Gate (verify before reporting done)
 - [ ] Delivered answer cites wiki pages via Obsidian wikilinks for every claim.
-- [ ] **If filed:** the synthesis page complies with its type contract in `AGENTS.md` § Synthesis Pages (non-empty `type` plus `title`/`description`/`question`/`tags`/`timestamp`; all H1 sections present), uses Obsidian wikilinks for internal links (markdown links only for external URLs), has no legacy `updated`/`source_path` fields, `wiki/index.md` is rebuilt per the Canonical rebuild procedure and lists the new page, and `wiki/log.md` has a newly appended `## YYYY-MM-DD` query entry.
+- [ ] **If filed:** the synthesis page complies with its type contract in `AGENTS.md` § Synthesis Pages (non-empty `type` plus `title`/`description`/`question`/`tags`/`timestamp`; all REQUIRED H1 sections present — optional sections marked "omit otherwise" in AGENTS.md, e.g. `# Comparison Table`, may be omitted), uses Obsidian wikilinks for internal links (markdown links only for external URLs), has no legacy `updated`/`source_path` fields, `wiki/index.md` is rebuilt per the Canonical rebuild procedure and lists the new page, and `wiki/log.md` has a newly appended `## YYYY-MM-DD` query entry.
 
 ## Path Handling Rules
 - Discovery entrypoint: `wiki/index.md`.

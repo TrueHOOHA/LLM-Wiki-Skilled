@@ -25,7 +25,7 @@ OKF (SPEC.md §9) requires only that every concept document carry a parseable YA
 ## Directory Layout
 
 ```
-LLM-Wiki-Skilled/
+LLM-Wiki/
 ├── AGENTS.md          # This file. Authoritative schema.
 ├── README.md          # Human quickstart.
 ├── SPEC.md            # Open Knowledge Format (OKF) v0.1 spec this bundle follows.
@@ -90,9 +90,10 @@ The body of every concept document is standard markdown. Per OKF §4.2 there are
   tags: [tag-one, tag-two]
   created: YYYY-MM-DD
   timestamp: YYYY-MM-DD
-  source_count: 0
+  source_count: 1
   ---
   ```
+- Update rule: when creating a page, set `source_count: 1`; when updating from a new source, increment `source_count` by 1 and bump `timestamp` to today.
 - Sections (H1):
   - `# Identity` — What it is, one concise paragraph.
   - `# Aliases` — List of known aliases.
@@ -115,9 +116,10 @@ The body of every concept document is standard markdown. Per OKF §4.2 there are
   tags: [tag-one, tag-two]
   created: YYYY-MM-DD
   timestamp: YYYY-MM-DD
-  source_count: 0
+  source_count: 1
   ---
   ```
+- Update rule: when creating a page, set `source_count: 1`; when updating from a new source, increment `source_count` by 1 and bump `timestamp` to today.
 - Sections (H1):
   - `# Definition` — Precise definition in one paragraph.
   - `# Scope` — What this concept covers and what it does not.
@@ -128,7 +130,7 @@ The body of every concept document is standard markdown. Per OKF §4.2 there are
 
 ### Source Pages (`wiki/sources/`)
 
-- Filename: `YYYY-MM-DD--source-title-slug.md`
+- Filename: `YYYY-MM-DD--source-title-slug.md`, where the date prefix is the **ingest date** (when the source page is created). The source's own publication date is recorded in the frontmatter `date` field below.
 - Purpose: Summary and extraction from a single raw source.
 - Frontmatter:
   ```yaml
@@ -189,7 +191,7 @@ Concepts link to other concepts using **Obsidian wikilinks** (the `[[…]]` synt
 
 A link asserts a *relationship*; the specific kind (references, related-to, depends-on) is conveyed by the surrounding prose. Consumers MUST tolerate broken links — a `[[target]]` whose note does not yet exist represents not-yet-written knowledge, not a malformed document (OKF §5.3 spirit). The lint pass reports unresolved wikilinks at **low** severity for cleanup, never as schema violations.
 
-**External URLs are not wikilinks.** For `https://…` (or other external schemes) use standard markdown links: `[text](https://example.com)`. Wikilinks are for internal notes only.
+**External URLs are not wikilinks.** For `https://…` (or other external schemes) use standard markdown links: `[text](https://example.com)`. Wikilinks are for internal notes only. In particular, Obsidian's `[[https://example.com]]` / `[[http://…]]` syntax (an external URL wrapped in wikilink brackets) is PROHIBITED — it is an external link, not an internal note reference; use `[text](https://example.com)` instead.
 
 ## Citations
 

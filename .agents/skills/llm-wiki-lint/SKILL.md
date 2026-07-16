@@ -34,27 +34,29 @@ For every concept document under `wiki/` (excluding `index.md`, `log.md`, `templ
 - **`type` non-empty:** the `type` field is present and non-empty (high if missing).
 - **No legacy fields:** `updated` and `source_path` are not used (they migrated to `timestamp` and `resource`) (medium).
 - **Recommended fields present:** `title`, `description`, `tags`, `timestamp` (low if absent — these are OKF-recommended, not strictly required).
-- **Source pages:** `resource` is present and begins with `raw/sources/` or `raw/assets/` (high if missing/malformed).
+- **Source pages:** `resource` is present, begins with `raw/sources/` or `raw/assets/`, AND the file at that path exists on disk (high if missing/malformed; high if the referenced file does not exist).
 
 Report each violation (code: `okf/*`, severity as noted).
 
 ### 2. Producer-Convention Compliance (AGENTS.md § Page Types & Conventions)
 
-- **Sections:** every recommended `# ` (H1) heading for the page's `type` is present and spelled exactly as in AGENTS.md (medium). The title is NOT a body heading — it lives in frontmatter `title` (medium if a stray `# Title` H1 duplicates the frontmatter title).
+- **Sections:** every recommended `# ` (H1) heading for the page's `type` is present and spelled exactly as in AGENTS.md (medium). Optional sections explicitly marked "omit otherwise" in AGENTS.md (e.g. synthesis `# Comparison Table`) are NOT required — do not flag their absence. The title is NOT a body heading — it lives in frontmatter `title` (medium if a stray `# Title` H1 duplicates the frontmatter title).
 - **Filenames:** entity and concept pages use `kebab-case.md`; source and synthesis pages use `YYYY-MM-DD--slug.md` (medium).
 - **Citations:** `# Citations` (where present) uses numbered `[n] [[source-slug|Title]]` wikilinks for internal source pages and `[n] [text](https://…)` markdown links for external material (low).
+- **Type-specific fields:** synthesis pages have a non-empty `question`; entity/concept pages have an integer `source_count` ≥ 0 (low if absent/malformed).
 
 Report each violation (code: `schema/*`, severity as noted).
 
 ### 3. Link Health (Obsidian wikilinks, AGENTS.md § Cross-linking)
 
 - **Internal links are wikilinks:** every internal note-to-note link uses `[[…]]` Obsidian wikilink syntax. A bundle-relative markdown link like `[Title](/entities/x.md)` or `[Title](../entities/x.md)` for an internal note is a deviation (medium) — convert it to `[[x|Title]]`.
-- **External links are markdown:** `https://…` (and other external schemes) use standard markdown links `[text](https://…)`, NOT wikilinks (low).
+- **External links are markdown:** `https://…` (and other external schemes) use standard markdown links `[text](https://…)`, NOT wikilinks (low). This includes the Obsidian `[[https://…]]` / `[[http://…]]` form (an external URL wrapped in wikilink brackets) — flag it as a deviation (low) and convert to `[text](https://…)`.
 - **Resolution:** every `[[target]]` (plain or `[[target|Display]]`) resolves to a file whose basename (without `.md`) or one of its frontmatter `aliases` equals `target`. Per OKF §5.3, unresolved wikilinks are **tolerated, not malformed** — report them at **low** severity for cleanup, never as schema violations.
 
 ### 4. Reserved-File Structure
 
 - **`wiki/index.md`:** carries only `okf_version: "0.1"` frontmatter (the only frontmatter permitted in a bundle-root index, OKF §11) and OKF §6 bullet-list sections (Entities, Concepts, Sources, Syntheses, Statistics). Entries use Obsidian wikilinks (`[[note-name|Title]]`), not markdown links. No tables (medium).
+- **`wiki/index.md` ↔ disk consistency:** every `.md` content page under `wiki/{entities,concepts,sources,syntheses}/` is listed in `index.md`, and every `index.md` entry resolves to a page on disk — no missing entries, no phantom entries (high). Phantom detection overlaps Check 3 wikilink resolution; the missing-entry direction is the one most easily broken by an incomplete rebuild.
 - **`wiki/log.md`:** OKF §7 — `## YYYY-MM-DD` date headings, newest first, prose bullets. No `## [YYYY-MM-DD] action | desc` legacy headers (medium).
 
 ### 5. Contradictions

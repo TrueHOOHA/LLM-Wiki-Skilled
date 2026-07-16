@@ -53,11 +53,15 @@ The agent will:
 ## Project Structure
 
 ```
-LLM-wiki/
+LLM-Wiki/
 ├── AGENTS.md          # Schema and conventions (the "system prompt")
 ├── SPEC.md            # Open Knowledge Format (OKF) v0.1 spec the wiki conforms to.
-├── README.md          # This file
+├── README.md          # This file (English)
+├── README.zh-CN.md    # Chinese quickstart
+├── LICENSE            # Project license
 ├── raw/               # Your immutable source documents
+│   ├── README.md      # Raw-source policy and naming (中文)
+│   ├── README.en.md   # English raw-source policy
 │   ├── sources/       # Text sources
 │   └── assets/        # Images, data files
 ├── wiki/              # LLM-maintained knowledge base
